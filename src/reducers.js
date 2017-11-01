@@ -7,6 +7,10 @@ let defaultUser = {
   loginState: false
 };
 
+let initialTab = {
+  tabName: "TabA"
+}
+
 export const authenticate = (state = defaultUser, action) => {
   switch (action.type) {
     case "AUTHENTICATE_USER":
@@ -37,7 +41,7 @@ export const authenticate = (state = defaultUser, action) => {
   }
 };
 
-export const listOperate = (state = [], action) => {
+export const listOperation = (state = [], action) => {
     switch(action.type){
         case "ADD_ONE":
             return [
@@ -53,10 +57,20 @@ export const listOperate = (state = [], action) => {
             return state;
     }
 }
+ 
+export const tabChange = (state = initialTab, action) => {
+  switch(action.type) {
+    case "CHANGE_TAB":
+      return {tabName: action.tabName}
+    default:
+      return state;
+  }
+}
 
 const contactApp = combineReducers({
   authenticate,
-  listOperate
+  listOperation,
+  tabChange
 });
 
 export default contactApp;

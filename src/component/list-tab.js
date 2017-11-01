@@ -40,8 +40,8 @@ class ListTab extends Component {
             : this.props.items.map((item, index) => {
                 return (
                   <ol key={index}>
-                    <li>name: {item.name}</li>
-                    <li>phone: {item.phone}</li>
+                    <li><span>name: {item.name}</span>
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;phone: {item.phone}</span></li>
                   </ol>
                 );
               })}

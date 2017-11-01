@@ -12,9 +12,9 @@ class App extends Component {
   // componentDidUpdate() {
   //   console.log(this.props, 'app did update');
   // }
-//   componentWillMount() {
-//     console.log(this.props, 'app will mount');
-// }
+  //   componentWillMount() {
+  //     console.log(this.props, 'app will mount');
+  // }
   constructor(props) {
     super(props);
     this.loginAuthenticate = this.loginAuthenticate.bind(this);
@@ -22,14 +22,14 @@ class App extends Component {
   }
 
   loginAuthenticate(routeText) {
-    if(this.props.authenticate.loginState !== true) {
+    if (this.props.authenticate.loginState !== true) {
       return "/login";
     } else {
       return routeText;
     }
   }
   loginStatePrompt() {
-    if(this.props.authenticate.loginState === true) {
+    if (this.props.authenticate.loginState === true) {
       return `${this.props.authenticate.userName} 已登录`;
     } else {
       return "未登录";
@@ -37,40 +37,42 @@ class App extends Component {
   }
   render() {
     return (
-      <div>
-        <div>App</div>
-        <div>{this.loginStatePrompt()}</div>
-        <Menu menuItem={this.props.children} loginAuthenticate={this.loginAuthenticate}></Menu>
+      <div id="App" className="App">
+        <div id="Container" className="Container">
+          <div className="header">
+            <div>Contact</div>
+            <div>{this.loginStatePrompt()}</div>
+          </div>
+          <Menu
+            menuItem={this.props.children}
+            loginAuthenticate={this.loginAuthenticate}
+          />
+        </div>
       </div>
     );
   }
 }
 
 export class Menu extends Component {
-  // componentWillUpdate() {
-  //   console.log(this.state, 'menu will update');
-  // }
-  // componentDidUpdate() {
-  //   console.log(this.props, 'menu did update');
-  // }
   render() {
-    // loginAuthenticate(routeText) {
-    //   if()
-    // } 
-    
     return (
-      <div>
-        <ul>
-          <li><Link to="/login">Login</Link></li>
-          <li><Link to={this.props.loginAuthenticate("/contact")}>Contact</Link></li>
-        </ul>
-        {this.props.menuItem}
+      <div className="content">
+        <div className="menu-column">
+          <ul>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+            <li>
+              <Link to={this.props.loginAuthenticate("/contact")}>Contact</Link>
+            </li>
+          </ul>
+        </div>
+        <div className="menu-content">{this.props.menuItem}</div>
       </div>
     );
   }
 }
 
-const mapStateToProps = (state) => state;
-
+const mapStateToProps = state => state;
 
 export default connect(mapStateToProps)(App);
