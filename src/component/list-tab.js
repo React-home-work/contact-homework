@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Router, Route, Link } from "react-router";
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
+// import { bindActionCreators } from "redux";
+// import { connect } from "react-redux";
 // import { addOne } from "../actions";
 // import { authenticateUser } from "../actions";
 // import { store } from "../index";
@@ -16,9 +16,9 @@ class ListTab extends Component {
   //     const name = '1111';
   //   }
   // }
-  // componentDidUpdate() {
-  //   console.log(this.props.listItem, '11111');
-  // }
+  componentDidUpdate() {
+    console.log(this.props.listItem, '11111');
+  }
   render() {
     // console.log(store.getState().listOperate, 'listtabsotre')
     console.log(this.props.items, "items");

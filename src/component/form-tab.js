@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Router, Route, Link } from "react-router";
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
+// import { bindActionCreators } from "redux";
+// import { connect } from "react-redux";
 // import { addOne } from "../actions";
 // import { authenticateUser } from "../actions";
 // import { store } from "../index";

@@ -67,10 +67,21 @@ export const tabChange = (state = initialTab, action) => {
   }
 }
 
+export const searchCondition = (state = "", action) => {
+  switch(action.type) {
+    case "SET_SEARCH_CONDITION":
+      console.log(state, "SET_SEARCH_CONDITION")
+      return action.condition;
+    default:
+      return state;
+  }
+}
+
 const contactApp = combineReducers({
   authenticate,
   listOperation,
-  tabChange
+  tabChange,
+  searchCondition
 });
 
 export default contactApp;

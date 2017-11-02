@@ -9,6 +9,9 @@ class Login extends Component {
     // componentWillMount() {
     //     console.log(this.props, 'Login props');
     // }
+    // componentDidUpdate() {
+    //   console.log(store.getState(), 'login did update');
+    // }
     constructor(props) {
       super(props);
     //   const {dispatch} = this.props; //? 感觉有问题，待定
