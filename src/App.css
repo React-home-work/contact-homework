@@ -1,14 +1,9 @@
 .App {
-  border-width: 5px;
+  border-width: 0.3em;
   border-style: inset;
   border-color: black;
   margin: 5% 8% 5% 8%;
   padding: 2.5% 4% 2.5% 4%;
-  /* margin-top: 10%;
-  margin-bottom: 10%;
-  margin-left: 15%;
-  margin-right: 15%; */
-  /* text-align: center; */
 }
 
 .App-logo {
@@ -16,20 +11,6 @@
   height: 80px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
@@ -86,4 +67,13 @@
             flex: 3 1 60%;
     -webkit-order: 2;
             order: 2;
+}
+
+.item-listing {
+  height: 100px;
+  overflow-y: auto;  
+}
+
+.item-listing > div {
+  height: 20px;
 }

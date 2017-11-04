@@ -57,7 +57,7 @@ const setItemSearchCondition = (items, searchCondition) => {
       console.log(item, "items in setItemSearchCondition")
       if (
         item.name.indexOf(searchCondition) > -1 ||
-        item.phone.indexOf(searchCondition) > -1
+        item.phone.toString().indexOf(searchCondition) > -1
       ) {
         return item;
       }

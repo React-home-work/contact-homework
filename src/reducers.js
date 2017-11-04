@@ -11,6 +11,26 @@ let initialTab = {
   tabName: "TabA"
 }
 
+// for fake use
+let listItemFake = [
+  {name: "A", phone: 1},
+  {name: "A", phone: 2},
+  {name: "A", phone: 3},
+  {name: "A", phone: 4},
+  {name: "A", phone: 5},
+  {name: "A", phone: 6},
+  {name: "A", phone: 7},
+  {name: "A", phone: 8},
+  {name: "A", phone: 9},
+  {name: "A", phone: 10},
+  {name: "A", phone: 11},
+  {name: "A", phone: 12},
+  {name: "A", phone: 13},
+  {name: "A", phone: 14},
+  {name: "A", phone: 15},
+  {name: "A", phone: 16}
+]
+
 export const authenticate = (state = defaultUser, action) => {
   switch (action.type) {
     case "AUTHENTICATE_USER":
@@ -41,7 +61,9 @@ export const authenticate = (state = defaultUser, action) => {
   }
 };
 
-export const listOperation = (state = [], action) => {
+//fot test-use
+export const listOperation = (state = listItemFake, action) => {
+// export const listOperation = (state = [], action) => {
     switch(action.type){
         case "ADD_ONE":
             return [
