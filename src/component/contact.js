@@ -18,7 +18,9 @@ class Contact extends Component {
   }
 
   componentWillUpdate() {
-    console.log(this.props.searchCondition, "searchcondition111");
+    console.log(this.props.items, "will update items");
+        console.log(this.props.searchCondition, "searchcondition");    
+
   }
 
 

@@ -13,7 +13,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 export const store = createStore(contactApp); // TODO !记得去掉这行测试用的export
 // console.log(store.getState(), 'store.getState()');
-console.log(store.getState())
+// console.log(store.getState())
 
 // 每次 state 更新时，打印日志
 // 注意 subscribe() 返回一个函数用来注销监听器
