@@ -13,13 +13,13 @@ import { store } from "../index";
 class Contact extends Component {
   constructor(props) {
     super(props);
-    console.log(this.props.items, "test contact");
-    console.log(this.props.searchCondition, "searchcondition");
+    // console.log(this.props.items, "test contact");
+    // console.log(this.props.searchCondition, "searchcondition");
   }
 
   componentWillUpdate() {
-    console.log(this.props.items, "will update items");
-        console.log(this.props.searchCondition, "searchcondition");    
+    // console.log(this.props.items, "will update items");
+        // console.log(this.props.searchCondition, "searchcondition");    
 
   }
 
@@ -56,7 +56,7 @@ class Contact extends Component {
 const setItemSearchCondition = (items, searchCondition) => {
   if (searchCondition && items.length !== 0) {
     return items.filter(item => {
-      console.log(item, "items in setItemSearchCondition")
+      // console.log(item, "items in setItemSearchCondition")
       if (
         item.name.indexOf(searchCondition) > -1 ||
         item.phone.toString().indexOf(searchCondition) > -1
