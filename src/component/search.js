@@ -20,7 +20,7 @@ class SearchCondition extends Component {
                 <input type="text" ref="search" />
                 <button onClick={() => {
                     this.props.onSearchClick(this.refs.search.value);
-                    this.refs.search.value = "";
+                    // this.refs.search.value = "";
                 }}>Search</button>
             </div>
         )
