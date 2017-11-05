@@ -1,14 +1,12 @@
 import React, { Component } from "react";
-import { Router, Route, Link } from "react-router";
-// import { bindActionCreators } from "redux";
+import { Link } from "react-router";
 import { connect } from "react-redux";
 import { addOne, getList, changeTab, setSearchCondition } from "../actions";
 // import "../App.css";
 import FormTab from "./form-tab";
 import ListTab from "./list-tab";
 import SearchCondition from "./search";
-// import { authenticateUser } from "../actions";
-import { store } from "../index";
+// import { store } from "../index";
 
 class Contact extends Component {
   constructor(props) {

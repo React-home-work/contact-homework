@@ -12,7 +12,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 
 export const store = createStore(contactApp); // TODO !记得去掉这行测试用的export
-// console.log(store.getState(), 'store.getState()');
+console.log(store.getState(), 'store.getState()');
 // console.log(store.getState())
 
 // 每次 state 更新时，打印日志
@@ -23,13 +23,20 @@ export const store = createStore(contactApp); // TODO !记得去掉这行测试�
 // store.dispatch(authenticateUser("Admin", "123"));
 // unsubscribe();
 
+const requireAuth = (nextState, replace) => {
+    if (!store.getState().authenticate.loginState) {
+        // Redirect to Home page if not an Admin
+        replace({ pathname: '/Login' })
+    }
+}
+
 ReactDOM.render(
     <Provider store={store}>
         <Router history={browserHistory}>
             {/* <IndexRoute component={Login}/> */}
             <Route path="/" component={App}>
                 <Route path="/Login" component={Login}></Route>
-                <Route path="/Contact" component={Contact}></Route>
+                <Route path="/Contact" component={Contact} onEnter={requireAuth}></Route>
             </Route>
         </Router>
     </Provider>
