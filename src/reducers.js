@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
-import { store } from './index';
+import { LOGIN_SUCCESS, HAVE_NOT_LOGIN, LOGIN_FAIL } from "./env_variable";
 
 let defaultUser = {
   userName: "Admin",
   passWd: "123",
-  loginState: false
+  loginState: HAVE_NOT_LOGIN
 };
 
 let initialTab = {
@@ -45,16 +45,13 @@ export const authenticate = (state = defaultUser, action) => {
         
         return Object.assign({}, state, {
           ...state,
-          loginState: true
+          loginState: LOGIN_SUCCESS
         });
-        // console.log(state, 'state');
-        // console.log(Object.assign({}, state, {
-        //        ...state,
-        //        loginState: true
-        //      }), 'return state');
-        //      return state;
       } else {
-        return state;
+        return Object.assign({}, state, {
+          ...state,
+          loginState: LOGIN_FAIL
+        });
       }
     default:
       return state;

@@ -8,24 +8,15 @@ import App from './App';
 import { Login, Contact } from "./component"
 import contactApp from './reducers'
 import registerServiceWorker from './registerServiceWorker';
+import {LOGIN_SUCCESS} from "./env_variable";
 // import { authenticateUser } from "./actions";
 
 
 export const store = createStore(contactApp); // TODO !记得去掉这行测试用的export
 console.log(store.getState(), 'store.getState()');
-// console.log(store.getState())
-
-// 每次 state 更新时，打印日志
-// 注意 subscribe() 返回一个函数用来注销监听器
-// let unsubscribe = store.subscribe(() =>
-//   console.log(store.getState())
-// )
-// store.dispatch(authenticateUser("Admin", "123"));
-// unsubscribe();
 
 const requireAuth = (nextState, replace) => {
-    if (!store.getState().authenticate.loginState) {
-        // Redirect to Home page if not an Admin
+    if (store.getState().authenticate.loginState !== LOGIN_SUCCESS) {
         replace({ pathname: '/Login' })
     }
 }
