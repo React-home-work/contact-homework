@@ -11,7 +11,7 @@ import SearchCondition from "./searchView";
 class Contact extends Component {
   constructor(props) {
     super(props);
-    console.log(this.props, "test contact");
+    // console.log(this.props, "test contact");
     // console.log(this.props.searchCondition, "searchcondition");
   }
 
