@@ -1,4 +1,4 @@
 // import Login from "./login/index";
-// import Contact from "./contact";
+// import contact from "./contact";
 //
-// export { Login, Contact };
+// export { Login, contact };

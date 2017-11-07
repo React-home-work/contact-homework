@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { authenticateUser } from "./actionCreates";
+import { authenticateUser } from "./actionCreator";
 import {LOGIN_SUCCESS} from "../../env_variable";
 
 export default class View extends Component {

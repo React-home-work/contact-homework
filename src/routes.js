@@ -1,8 +1,8 @@
 import React from 'react';
 import { Route } from 'react-router';
 import App from './App';
-import Contact from "./component/contact";
 import { Login } from "./component/login";
+import { Contact } from "./component/contact";
 import {LOGIN_SUCCESS} from "./env_variable";
 import { store } from "./index"
 
