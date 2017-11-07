@@ -13,7 +13,6 @@ class ListTab extends Component {
     this.onScroll = this.onScroll.bind(this);
     this.state = {
       items: this.props.items.slice(0, ITEMS_PER_PAGE),
-      pages: this.pages,
       isEnd: false
     }
   }
@@ -24,7 +23,6 @@ class ListTab extends Component {
     this.currentPageEndNum = ITEMS_PER_PAGE;
     this.setState({
       items: nextProps.items.slice(0, ITEMS_PER_PAGE),
-      pages: this.pages,
       isEnd: false
     })
   }

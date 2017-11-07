@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { authenticateUser } from "../actions";
-import {LOGIN_SUCCESS} from "../env_variable";
+import { authenticateUser } from "./actionCreates";
+import {LOGIN_SUCCESS} from "../../env_variable";
 
 class Login extends Component {
 
