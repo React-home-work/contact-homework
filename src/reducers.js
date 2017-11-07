@@ -1,11 +1,5 @@
 import { combineReducers } from "redux";
-import { LOGIN_SUCCESS, HAVE_NOT_LOGIN, LOGIN_FAIL } from "./env_variable";
-
-let defaultUser = {
-  userName: "Admin",
-  passWd: "123",
-  loginState: HAVE_NOT_LOGIN
-};
+import { authenticateReducer } from "./component/login";
 
 let initialTab = {
   tabName: "TabA"
@@ -31,27 +25,6 @@ let listItemFake = [
   {name: "A", phone: 16}
 ];
 
-export const authenticate = (state = defaultUser, action) => {
-  switch (action.type) {
-    case "AUTHENTICATE_USER":
-      if (
-        action.userName === state.userName &&
-        action.passWd === state.passWd
-      ) {
-        return Object.assign({}, state, {
-          ...state,
-          loginState: LOGIN_SUCCESS
-        });
-      } else {
-        return Object.assign({}, state, {
-          ...state,
-          loginState: LOGIN_FAIL
-        });
-      }
-    default:
-      return state;
-  }
-};
 
 //fot test-use
 export const listOperation = (state = listItemFake, action) => {
@@ -90,10 +63,14 @@ export const searchCondition = (state = "", action) => {
 };
 
 const contactApp = combineReducers({
-  authenticate,
+  authenticateReducer,
   listOperation,
   tabChange,
   searchCondition
 });
 
 export default contactApp;
+
+export const reducers = {
+  authenticateReducer,
+};

@@ -23,7 +23,7 @@ class Login extends Component {
 }
 
 const mapStateToProps = state => ({
-  loginState: state.authenticate.loginState
+  loginState: state.authenticateReducer.loginState
 });
 
 export default connect(mapStateToProps)(Login);

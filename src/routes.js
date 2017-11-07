@@ -7,7 +7,7 @@ import {LOGIN_SUCCESS} from "./env_variable";
 import { store } from "./index"
 
 const requireAuth = (nextState, replace) => {
-  if (store.getState().authenticate.loginState !== LOGIN_SUCCESS) {
+  if (store.getState().authenticateReducer.loginState !== LOGIN_SUCCESS) {
     replace({ pathname: '/Login' })
   }
 };

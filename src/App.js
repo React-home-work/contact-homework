@@ -11,7 +11,7 @@ class App extends Component {
   }
 
   loginAuthenticate(routeText) {
-    if (this.props.authenticate.loginState !== LOGIN_SUCCESS) {
+    if (this.props.authenticateReducer.loginState !== LOGIN_SUCCESS) {
       return "/login";
     } else {
       return routeText;
@@ -24,7 +24,7 @@ class App extends Component {
         <div id="Container" className="Container">
           <div className="header">
             <div>Contact</div>
-            <div>{this.props.authenticate.loginState}</div>
+            <div>{this.props.authenticateReducer.loginState}</div>
           </div>
           <Menu
             menuItem={this.props.children}
