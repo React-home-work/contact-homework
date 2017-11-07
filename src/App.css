@@ -6,18 +6,6 @@
   padding: 2.5% 4% 2.5% 4%;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-
 .Container {
   display: -webkit-flex;
   display: flex;
@@ -35,47 +23,7 @@
     background: #ffeebb;
 }
 
-.content {
-    /* min-height: 800px; */
-    margin: 0px;
-    padding: 0px;
-    display: -webkit-flex;
-    display:         flex;
-    -webkit-flex-flow: row;
-            flex-flow: row;
-}
 
-.menu-column {
-    margin: 4px;
-    padding: 5px;
-    border: 1px solid #8888bb;
-    border-radius: 7pt;
-    background: #ccccff;
-    -webkit-flex: 1 6 20%;
-            flex: 1 6 20%;
-    -webkit-order: 1;
-            order: 1;
-}
 
-.menu-content {
-    margin: 4px;
-    padding: 5px;
-    border: 1px solid #cccc33;
-    border-radius: 7pt;
-    background: #dddd88;
-    -webkit-flex: 3 1 60%;
-            flex: 3 1 60%;
-    -webkit-order: 2;
-            order: 2;
-}
 
-.item-listing {
-  height: 99px;
-  overflow-y: auto;  
-}
 
-/*.item-listing > div > li {*/
-.item-listing > li {
-    display: block;
-  height: 20px;
-}

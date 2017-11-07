@@ -7,8 +7,7 @@ import routes from "./routes"
 import contactApp from './reducers'
 import registerServiceWorker from './registerServiceWorker';
 
-
-export const store = createStore(contactApp); // TODO !记得去掉这行测试用的export
+export const store = createStore(contactApp);
 
 ReactDOM.render(
     <Provider store={store}>

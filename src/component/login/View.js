@@ -1,14 +1,12 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
-import { authenticateUser } from "./actionCreator";
-import {LOGIN_SUCCESS} from "../../env_variable";
+import loginAuthenticate from "./loginAuthenticate"
 
 export default class View extends Component {
   render() {
     return(
       <div>
         <span>{this.props.loginState}</span>
-        { this.props.loginState === LOGIN_SUCCESS ? null :
+        { loginAuthenticate() ? null :
           <div>
             <input type="text" ref="loginUserName" />
             <input type="text" ref="loginUserPassWd" />

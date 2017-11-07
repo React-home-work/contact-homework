@@ -1,0 +1,9 @@
+.item-listing {
+    height: 99px;
+    overflow-y: auto;
+}
+
+.item-listing > li {
+    display: block;
+    height: 20px;
+}

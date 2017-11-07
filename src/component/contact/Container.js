@@ -1,27 +1,12 @@
 import React, { Component } from "react";
-import { Link } from "react-router";
 import { connect } from "react-redux";
 import { addOne, getList, changeTab, setSearchCondition } from "./actionCreator";
-// import "../App.css";
+import "../../App.css";
 import FormTab from "./addFormView";
 import ListTab from "./itemsListView";
 import SearchCondition from "./searchView";
-// import { store } from "../index";
 
 class Contact extends Component {
-  constructor(props) {
-    super(props);
-    // console.log(this.props, "test contact");
-    // console.log(this.props.searchCondition, "searchcondition");
-  }
-
-  componentWillUpdate() {
-    // console.log(this.props.items, "will update items");
-    // console.log(this.props.searchCondition, "searchcondition");
-
-  }
-
-
 
   render() {
     const { dispatch, items} = this.props;
@@ -29,8 +14,8 @@ class Contact extends Component {
     return (
       <div>
         <div>
-          <li onClick={() => dispatch(changeTab("TabA"))}>TabA</li>
-          <li onClick={() => dispatch(changeTab("TabB"))}>TabB</li>
+          <li onClick={() => dispatch(changeTab("TabA"))}>新增</li>
+          <li onClick={() => dispatch(changeTab("TabB"))}>联系人列表</li>
         </div>
         <div>
           {this.props.tabState.tabName === "TabA" ? (
@@ -54,7 +39,6 @@ class Contact extends Component {
 const setItemSearchCondition = (items, searchCondition) => {
   if (searchCondition && items.length !== 0) {
     return items.filter(item => {
-      // console.log(item, "items in setItemSearchCondition")
       if (
         item.name.indexOf(searchCondition) > -1 ||
         item.phone.toString().indexOf(searchCondition) > -1
@@ -72,9 +56,5 @@ const mapStateToProps = state => ({
   tabState: state.tabChange,
   searchCondition: state.searchCondition
 });
-
-// 待确认：是否这里的state是导入reducer中的时候-->全局的state
-// const mapStateToProps = (state) => (state.addOneItem);
-// const mapStateToProps = (state) => (state.addOneItem || []);
 
 export default connect(mapStateToProps)(Contact);

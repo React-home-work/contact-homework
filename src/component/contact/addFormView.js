@@ -5,7 +5,7 @@ class FormTab extends Component {
   render() {
     return (
       <div>
-        <div>TabA</div>
+        <div>添加联系人</div>
         <div>
           <input type="text" ref="name" placeholder="Name"/>
           <input type="text" ref="phone" placeholder="Phone"/>

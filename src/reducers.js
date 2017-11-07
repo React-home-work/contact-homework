@@ -11,10 +11,3 @@ const contactApp = combineReducers({
 });
 
 export default contactApp;
-
-export const reducers = {
-  authenticateReducer,
-  listOperation,
-  tabChange,
-  searchCondition
-};

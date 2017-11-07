@@ -1,5 +1,5 @@
 import Login from "./Container";
-import View from "./View";
 import { default as authenticateReducer } from "./reducer";
+import loginAuthenticate from "./loginAuthenticate";
 
-export { Login, View, authenticateReducer};
+export { Login, authenticateReducer, loginAuthenticate};

@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import ReactDOM from "react-dom";
 import {NO_ITEM, ITEMS_PER_PAGE } from '../../env_variable';
+import "./styles.css"
 
 
 class ListTab extends Component {

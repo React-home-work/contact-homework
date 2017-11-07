@@ -5,13 +5,13 @@ let initialTab = {
 // for fake use
 let listItemFake = [
   {name: "A", phone: 1},
-  {name: "A", phone: 2},
+  {name: "B", phone: 2},
   {name: "A", phone: 3},
-  {name: "A", phone: 4},
+  {name: "C", phone: 4},
   {name: "A", phone: 5},
-  {name: "A", phone: 6},
+  {name: "甲", phone: 6},
   {name: "A", phone: 7},
-  {name: "A", phone: 8},
+  {name: "路人甲", phone: 8},
   {name: "A", phone: 9},
   {name: "A", phone: 10},
   {name: "A", phone: 11},
@@ -23,7 +23,6 @@ let listItemFake = [
 ];
 
 
-//fot test-use
 export const listOperation = (state = listItemFake, action) => {
   switch(action.type){
     case "ADD_ONE":
