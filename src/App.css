@@ -70,10 +70,12 @@
 }
 
 .item-listing {
-  height: 100px;
+  height: 99px;
   overflow-y: auto;  
 }
 
-.item-listing > div {
+/*.item-listing > div > li {*/
+.item-listing > li {
+    display: block;
   height: 20px;
 }
