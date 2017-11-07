@@ -1,22 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Menu } from "./component/menu";
-import { LOGIN_SUCCESS } from "./env_variable";
+import { loginAuthenticate } from "./component/login";
 import "./App.css";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.loginAuthenticate = this.loginAuthenticate.bind(this);
-  }
-
-  loginAuthenticate(routeText) {
-    if (this.props.authenticateReducer.loginState !== LOGIN_SUCCESS) {
-      return "/login";
-    } else {
-      return routeText;
-    }
-  }
 
   render() {
     return (
@@ -28,15 +16,13 @@ class App extends Component {
           </div>
           <Menu
             menuItem={this.props.children}
-            loginAuthenticate={this.loginAuthenticate}
+            loginAuthenticate={(routeText) => loginAuthenticate() ? routeText : "/login"}
           />
         </div>
       </div>
     );
   }
 }
-
-
 
 const mapStateToProps = state => state;
 
