@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Menu } from "./component/menu";
-import { loginAuthenticate } from "./component/login";
 import "./App.css";
 
 class App extends Component {
@@ -14,10 +13,7 @@ class App extends Component {
             <div>Contact</div>
             <div>{this.props.authenticateReducer.loginState}</div>
           </div>
-          <Menu
-            menuItem={this.props.children}
-            loginAuthenticate={(routeText) => loginAuthenticate() ? routeText : "/login"}
-          />
+          <Menu menuItem={this.props.children}/>
         </div>
       </div>
     );

@@ -12,7 +12,7 @@ export default class Menu extends Component {
               <Link to="/login">Login</Link>
             </li>
             <li>
-              <Link to={this.props.loginAuthenticate("/contact")}>Contact</Link>
+              <Link to="/contact">Contact</Link>
             </li>
           </ul>
         </div>
