@@ -7,14 +7,15 @@ class App extends Component {
 
   render() {
     return (
+      <div className="back-ground">
       <div id="App" className="App">
         <div id="Container" className="Container">
           <div className="header">
             <div>Contact</div>
-            <div>{this.props.authenticateReducer.loginState}</div>
           </div>
           <Menu menuItem={this.props.children}/>
         </div>
+      </div>
       </div>
     );
   }

@@ -1,26 +1,32 @@
 .App {
-  border-width: 0.3em;
-  border-style: inset;
-  border-color: black;
-  margin: 5% 8% 5% 8%;
-  padding: 2.5% 4% 2.5% 4%;
+    border-width: 0.3em;
+    border-style: inset;
+    border-color: black;
+    border-radius: 15px;
+    margin: 5% 20% 5% 20%;
+    padding: 3% 8% 3% 8%;
+    background-image: url("./static/background.png");
+    font-family: "Comic Sans MS";
 }
 
 .Container {
-  display: -webkit-flex;
-  display: flex;
-  flex-direction: column
-  /* flex-direction: row | row-reverse | column | column-reverse; */
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
 }
 
 .header {
     display: block;
     margin: 4px;
-    padding: 5px;
-    /* min-height: 100px; */
+    padding: 2px;
     border: 1px solid #eebb55;
     border-radius: 7pt;
     background: #ffeebb;
+}
+
+.header:first-child {
+    font-size: xx-large;
+    text-align: center;
 }
 
 

@@ -10,14 +10,18 @@
 
 .menu-column {
     margin: 4px;
-    padding: 5px;
+    padding: 10px 5px 5px 5px;
     border: 1px solid #8888bb;
     border-radius: 7pt;
     background: #ccccff;
     -webkit-flex: 1 6 20%;
-    flex: 1 6 20%;
+    flex: 1 6 8%;
     -webkit-order: 1;
     order: 1;
+}
+
+.menu-column > div {
+    margin: 10px;
 }
 
 .menu-content {
@@ -26,6 +30,7 @@
     border: 1px solid #cccc33;
     border-radius: 7pt;
     background: #dddd88;
+    min-height: 300px;
     -webkit-flex: 3 1 60%;
     flex: 3 1 60%;
     -webkit-order: 2;

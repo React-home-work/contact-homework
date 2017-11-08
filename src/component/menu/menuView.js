@@ -7,14 +7,8 @@ export default class Menu extends Component {
     return (
       <div className="content">
         <div className="menu-column">
-          <ul>
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
-            <li>
-              <Link to="/contact">Contact</Link>
-            </li>
-          </ul>
+            <div><Link to="/login">Login</Link></div>
+            <div><Link to="/contact">Contact</Link></div>
         </div>
         <div className="menu-content">{this.props.menuItem}</div>
       </div>

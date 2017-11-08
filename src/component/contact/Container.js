@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { addOne, getList, setSearchCondition } from "./actionCreator";
-import "../../App.css";
 import FormTab from "./addFormView";
 import ListTab from "./itemsListView";
 import SearchCondition from "./searchView";
+import "./styles.css";
 
 class Contact extends Component {
 
@@ -21,9 +21,9 @@ class Contact extends Component {
     dispatch(getList());
     return (
       <div>
-        <div>
-          <li onClick={() => this.changeTab("TabA")}>新增</li>
-          <li onClick={() => this.changeTab("TabB")}>联系人列表</li>
+        <div className="tab">
+          <div onClick={() => this.changeTab("TabA")}>ADD</div>
+          <div onClick={() => this.changeTab("TabB")}>LIST</div>
         </div>
         <div>
           {this.state.tabName === "TabA" ? (

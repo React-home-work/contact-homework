@@ -52,8 +52,7 @@ class ListTab extends Component {
 
   render() {
     return (
-      <div>
-        <div>TabB</div>
+      <div className="list-page">
         <ul ref={(ul) => {
           this.ulList = ul;
         }} className="item-listing" onScroll={this.onScroll}>
@@ -65,7 +64,7 @@ class ListTab extends Component {
                   <span>&nbsp;&nbsp;&nbsp;&nbsp;phone: {item.phone}</span></li>
               );
             })}
-          {this.state.isEnd ? <li><span>到底啦</span></li> : null}
+          {this.state.isEnd ? <li><span>The End !</span></li> : null}
         </ul>
       </div>
     );
