@@ -1,4 +1,4 @@
 import Contact from "./Container";
-import { listOperation, tabChange, searchCondition } from "./reducer";
+import { listOperation, searchCondition } from "./reducer";
 
-export { Contact, listOperation, tabChange, searchCondition };
+export { Contact, listOperation, searchCondition };

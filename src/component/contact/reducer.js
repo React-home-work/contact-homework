@@ -1,7 +1,3 @@
-let initialTab = {
-  tabName: "TabA"
-};
-
 // for fake use
 let listItemFake = [
   {name: "A", phone: 1},
@@ -35,15 +31,6 @@ export const listOperation = (state = listItemFake, action) => {
       ];
     case "GET_LIST":
       return state;
-    default:
-      return state;
-  }
-};
-
-export const tabChange = (state = initialTab, action) => {
-  switch(action.type) {
-    case "CHANGE_TAB":
-      return {tabName: action.tabName};
     default:
       return state;
   }

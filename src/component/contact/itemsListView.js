@@ -10,7 +10,6 @@ class ListTab extends Component {
     super(props);
     this.pages = Math.ceil(this.props.items.length / ITEMS_PER_PAGE);
     this.currentPageStartNum = 0;
-    this.currentPageEndNum = ITEMS_PER_PAGE;
     this.onScroll = this.onScroll.bind(this);
     this.state = {
       items: this.props.items.slice(0, ITEMS_PER_PAGE),
@@ -21,7 +20,6 @@ class ListTab extends Component {
   componentWillReceiveProps(nextProps) {
     this.pages = Math.ceil(nextProps.items.length / ITEMS_PER_PAGE);
     this.currentPageStartNum = 0;
-    this.currentPageEndNum = ITEMS_PER_PAGE;
     this.setState({
       items: nextProps.items.slice(0, ITEMS_PER_PAGE),
       isEnd: false
@@ -38,11 +36,10 @@ class ListTab extends Component {
       --this.pages;
       if (this.pages > 0) {
         this.currentPageStartNum += ITEMS_PER_PAGE;
-        this.currentPageEndNum += ITEMS_PER_PAGE;
         this.setState({
           items: [
             ...this.state.items,
-            ...this.props.items.slice(this.currentPageStartNum, this.currentPageEndNum)
+            ...this.props.items.slice(this.currentPageStartNum, this.currentPageStartNum + ITEMS_PER_PAGE)
           ]
         })
       } else if (this.pages === 0) {

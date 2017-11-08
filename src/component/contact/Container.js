@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { addOne, getList, changeTab, setSearchCondition } from "./actionCreator";
+import { addOne, getList, setSearchCondition } from "./actionCreator";
 import "../../App.css";
 import FormTab from "./addFormView";
 import ListTab from "./itemsListView";
@@ -8,17 +8,25 @@ import SearchCondition from "./searchView";
 
 class Contact extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = { tabName: "TabA" };
+    this.changeTab = this.changeTab.bind(this);
+  }
+
+  changeTab(newTabName) { this.setState({ tabName: newTabName}); }
+
   render() {
     const { dispatch, items} = this.props;
     dispatch(getList());
     return (
       <div>
         <div>
-          <li onClick={() => dispatch(changeTab("TabA"))}>新增</li>
-          <li onClick={() => dispatch(changeTab("TabB"))}>联系人列表</li>
+          <li onClick={() => this.changeTab("TabA")}>新增</li>
+          <li onClick={() => this.changeTab("TabB")}>联系人列表</li>
         </div>
         <div>
-          {this.props.tabState.tabName === "TabA" ? (
+          {this.state.tabName === "TabA" ? (
             <FormTab
               onAddClick={(name, phone) => dispatch(addOne(name, phone))}
             />
@@ -53,8 +61,6 @@ const setItemSearchCondition = (items, searchCondition) => {
 
 const mapStateToProps = state => ({
   items: setItemSearchCondition(state.listOperation, state.searchCondition),
-  tabState: state.tabChange,
-  searchCondition: state.searchCondition
 });
 
 export default connect(mapStateToProps)(Contact);
