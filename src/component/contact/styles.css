@@ -12,10 +12,10 @@
     height: 25px;
 }
 
-.tab{
-    margin-left: 100px;
-    margin-top: 15px;
-}
+/*.tab{*/
+    /*margin-left: 100px;*/
+    /*margin-top: 15px;*/
+/*}*/
 
 .tab > div {
     display: inline-block;
