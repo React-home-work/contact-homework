@@ -61,7 +61,8 @@ class ListTab extends Component {
             : this.state.items.map((item, index) => {
               return (
                 <li key={index}><span>name: {item.name}</span>
-                  <span>&nbsp;&nbsp;&nbsp;&nbsp;phone: {item.phone}</span></li>
+                  <span>&nbsp;&nbsp;&nbsp;&nbsp;phone: {item.phone}</span>
+                  <button onClick={() => this.props.onDeleteClick(item.name, item.phone)}>Delete</button></li>
               );
             })}
           {this.state.isEnd ? <li><span>The End !</span></li> : null}
